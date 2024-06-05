@@ -1,0 +1,18 @@
+name: Pyth Indexer
+networks:
+  - id: 0
+    start_block: 0
+    contracts:
+      - name: Pyth
+        address: 0x40d3edfe7c67fd1459ccc53b1dfa922bce6957d6fe57cbdd85a85d609e753451
+        abi_file_path: abis/pyth-contract-abi.json
+        handler: ./src/EventHandlers.ts
+        events:
+          - name: ConstructedEvent
+          - name: NewGuardianSetEvent
+          # - name: UpdatedPriceFeedsEvent
+          # - name: ContractUpgradedEvent
+          - name: GovernanceDataSourceSetEvent
+          - name: DataSourcesSetEvent
+          - name: FeeSetEvent
+          - name: ValidPeriodSetEvent
